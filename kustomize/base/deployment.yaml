@@ -19,8 +19,7 @@ spec:
         app: devops-toolkit
         component: web
       annotations:
-        # linkerd.io/inject: enabled
-        linkerd.io/inject: ingress
+        linkerd.io/inject: enabled
     spec:
       containers:
       - name: devops-toolkit
