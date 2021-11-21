@@ -8,7 +8,6 @@ metadata:
     app: devops-toolkit
     component: web
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: devops-toolkit
@@ -35,9 +34,9 @@ spec:
             path: /
             port: 80
         resources:
-          limits:
-            cpu: 1000m
-            memory: 1Gi
           requests:
-            cpu: 500m
-            memory: 512Mi
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 200m
+            memory: 256Mi
