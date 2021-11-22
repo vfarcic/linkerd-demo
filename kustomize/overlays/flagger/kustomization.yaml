@@ -6,3 +6,7 @@ resources:
 - hpa.yaml
 - canary.yaml
 namespace: production
+images:
+- name: vfarcic/devops-toolkit-series
+  newName: vfarcic/devops-toolkit-series
+  newTag: 2.7.0
