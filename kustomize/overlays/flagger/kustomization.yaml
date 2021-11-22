@@ -1,12 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../../base
+- deployment.yaml
 - ingress.yaml
 - hpa.yaml
 - canary.yaml
 namespace: production
 images:
-- name: vfarcic/devops-toolkit-series
-  newName: vfarcic/devops-toolkit-series
-  newTag: 2.7.0
+- name: vfarcic/silly-demo
+  newName: vfarcic/silly-demo
+  newTag: 1.0.5

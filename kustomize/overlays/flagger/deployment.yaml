@@ -1,0 +1,42 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: silly-demo
+  labels:
+    app: silly-demo
+    component: web
+spec:
+  selector:
+    matchLabels:
+      app: silly-demo
+      component: web
+  template:
+    metadata:
+      labels:
+        app: silly-demo
+        component: web
+      annotations:
+        linkerd.io/inject: enabled
+    spec:
+      containers:
+      - name: silly-demo
+        image: vfarcic/silly-demo:latest
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 200m
+            memory: 256Mi
