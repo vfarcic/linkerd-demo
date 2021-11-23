@@ -6,7 +6,6 @@ metadata:
   name: silly-demo
   labels:
     app: silly-demo
-    component: web
 spec:
   minReplicas: 2
   maxReplicas: 6

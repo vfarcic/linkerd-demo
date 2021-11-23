@@ -6,17 +6,14 @@ metadata:
   name: silly-demo
   labels:
     app: silly-demo
-    component: web
 spec:
   selector:
     matchLabels:
       app: silly-demo
-      component: web
   template:
     metadata:
       labels:
         app: silly-demo
-        component: web
       annotations:
         linkerd.io/inject: enabled
     spec:
