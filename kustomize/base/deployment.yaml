@@ -19,6 +19,10 @@ spec:
         component: web
       annotations:
         linkerd.io/inject: enabled
+        config.linkerd.io/proxy-cpu-limit: "0.5"
+        config.linkerd.io/proxy-cpu-request: "0.1"
+        config.linkerd.io/proxy-memory-limit: 1Gi
+        config.linkerd.io/proxy-memory-request: 64Mi
     spec:
       containers:
       - name: devops-toolkit
